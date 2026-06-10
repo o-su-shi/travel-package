@@ -111,13 +111,13 @@ def convert_duration(x: Any) -> float:
 
 def convert_gender(x: Any) -> Optional[str]:
     if isinstance(x, str):
-        x = unicodedata.normalize("NFKC", x).lower().replace(" ", "").replace("　", "").capitalize()
+        x = unicodedata.normalize("NFKC", x).casefold().replace(" ", "").replace("　", "").capitalize()
         return x if x in ["Male", "Female"] else None
     return None
 
 def convert_product(x: Any) -> Optional[str]:
     if isinstance(x, str):
-        x = unicodedata.normalize("NFKC", x).translate(PRODUCT_REPLACE_MAP).lower().replace("　", " ").title()
+        x = unicodedata.normalize("NFKC", x).translate(PRODUCT_REPLACE_MAP).casefold().replace("　", " ").title()
         valid_products = ["Basic", "Deluxe", "Standard", "Super Deluxe", "King"]
         return x if x in valid_products else None
     return None

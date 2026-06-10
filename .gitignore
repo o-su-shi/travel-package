@@ -1,14 +1,28 @@
-Environments
+# Environments
 venv/
 .venv/
 
-Data
+# Data (competition data — do not redistribute)
 data/
 *.csv
 
-Jupyter
+# Jupyter
 .ipynb_checkpoints/
 
-Python / System cache
-pycache/
+# Python / System cache
+__pycache__/
+*.pyc
 .DS_Store
+
+# Model training artifacts
+catboost_info/
+
+# 個人用スライド（ポートフォリオには含めない）
+*.pptx
+*.key
+スライド/
+build_pptx.py
+build_tutorial_pptx.py
+
+# コンペ概要（個人メモ）
+*.docx
